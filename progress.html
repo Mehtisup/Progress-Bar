@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>$UP</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.progress {
+    background-color: gray;
+    width: 100%;
+}
+#myProg {
+    background-color: rgb(22, 210, 188);
+    width:3%;
+    height: 40px;
+}
+body {
+    background-color: black;
+}
+</style>
+</head>
+<body>
+    <div class="progress">
+        <div id="myProg"></div>
+    </div>
+    <br>
+    <button type="button" class="btn" onclick="moveFun()">CLICK</button>
+
+<script>
+var i = 0;
+function moveFun() {
+    if (i == 0) {
+        i = 1;
+        var elem = document.getElementById("myProg");
+        var width = 1;
+        var id = setInterval(frame , 10);
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id);
+                i = 0;
+            } else {
+                width++;
+                elem.style.width = width + "%";
+            }
+        }
+    }
+}
+</script>
+
+</body>
+</html>
